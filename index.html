@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOMBA BINARIA</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <div class="contenedor" id="contenedor">
+      <div class="contenedor__cabecera">
+        <div class="logo"><img src="./img/LOGO.png" alt="" /></div>
+      </div>
+      <div class="principal" id="principal">
+        <div class="bomba">
+          <div class="bomba_der"></div>
+          <div class="bomba_centro">
+            <div class="pantalla" id="pantalla">00</div>
+            <div class="teclado">
+              <div class="numeros">
+                <div class="fila">
+                  <div class="tecla">
+                    <button onclick="presionoNum(1)" class="bNum">1</button>
+                  </div>
+                  <div class="tecla">
+                    <button onclick="presionoNum(2)" class="bNum">2</button>
+                  </div>
+                  <div class="tecla">
+                    <button onclick="presionoNum(3)" class="bNum">3</button>
+                  </div>
+                </div>
+                <div class="fila">
+                  <div class="tecla">
+                    <button onclick="presionoNum(4)" class="bNum">4</button>
+                  </div>
+                  <div class="tecla">
+                    <button onclick="presionoNum(5)" class="bNum">5</button>
+                  </div>
+                  <div class="tecla">
+                    <button onclick="presionoNum(6)" class="bNum">6</button>
+                  </div>
+                </div>
+                <div class="fila">
+                  <div class="tecla">
+                    <button onclick="presionoNum(7)" class="bNum">7</button>
+                  </div>
+                  <div class="tecla">
+                    <button onclick="presionoNum(8)" class="bNum">8</button>
+                  </div>
+                  <div class="tecla">
+                    <button onclick="presionoNum(9)" class="bNum">9</button>
+                  </div>
+                </div>
+                <div class="fila">
+                  <div class="tecla">
+                    <button onclick="presionoNum(-1)" class="bNum" disabled>*</button>
+                  </div>
+                  <div class="tecla">
+                    <button onclick="presionoNum(0)" class="bNum">0</button>
+                  </div>
+                  <div class="tecla">
+                    <button onclick="presionoNum(-1)" class="bNum" disabled>#</button>
+                  </div>
+                </div>
+                <audio
+                  id="explosion"
+                  src="./sounds/hq-explosion-6288.mp3"
+                ></audio>
+                <audio
+                  id="beep"
+                  src="./sounds/short-beep-tone-47916.mp3"
+                ></audio>
+                <audio id="win" src="./sounds/youWin.mp3"></audio>
+                <audio id="error" src="./sounds/error.mp3"></audio>
+              </div>
+              <fiv class="funciones">
+                <button class="clear" onclick="borrarNum()">CLEAR</button>
+
+                <button onclick="verificar_clave()" class="enter">ENTER</button>
+              </fiv>
+            </div>
+          </div>
+          <div class="bomba_izq"></div>
+        </div>
+        <div class="info">
+          <h2 class="titulo-info">INFORMACION</h2>
+          <div class="text">
+            <div class="clave">
+              LA CLAVE ES:
+              <div class="bin" id="bin"></div>
+            </div>
+            <div class="clave">
+              Numero Ingresado:
+              <div class="bin" id="numIng"></div>
+            </div>
+
+            <div class="ayuda">
+              Para desactivar la bomba deberas ingresar la clave en el teclado y
+              presionar enter, el problema es que la clave esta en binario ,
+              deberas de traducirla a sistema decimal antes.Para comenzar
+              presione el boton Activar que corresponda a los segundos que va a
+              tener para desacativar la bomba
+            </div>
+            <div class="botActivar">
+              <button
+                class="botonTiempo activar30"
+                id="activar30"
+                onclick="inicializo_contador(30)"
+              >
+                ACTIVAR 30"
+              </button>
+              <button
+                class="botonTiempo activar15"
+                id="activar15"
+                onclick="inicializo_contador(15)"
+              >
+                ACTIVAR 15"
+              </button>
+              <button
+                class="botonTiempo activar10"
+                id="activar10"
+                onclick="inicializo_contador(10)"
+              >
+                ACTIVAR 10"
+              </button>
+              <button
+                class="botonTiempo stop"
+                id="parar"
+                onclick="detenerCuentaRegresiva()"
+              >
+                PARAR
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pie">
+        <p>COPYRIGHT pablocossio.net 2023</p>
+       
+   
+    </div>
+    </div>
+    <script src="funciones.js"></script>html5
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
