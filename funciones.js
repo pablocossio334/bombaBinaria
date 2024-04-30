@@ -3,7 +3,7 @@ let intervalo;
 let clave;
 let pausa;
 
-console.log(convierteBinario(128));
+
 fondo=document.getElementById('principal');
 let userNum=document.getElementById('numIng');
 function getRandomNumber(min, max) {
@@ -34,7 +34,8 @@ function inicializo_contador(num){
     
     fondo.style.backgroundImage="url('./img/angar.jpg')";
     clave= getRandomNumber(1, 101);
-    console.log(clave);
+
+    
     enJuego();
     document.getElementById('bin').innerHTML=convierteBinario(clave);
     cuentaRegresiva();
@@ -56,14 +57,16 @@ function borrarNum(){
     userNum.innerHTML="";
 }
 function convierteBinario(num){
-let exponente=[128,64,32,16,8,2,1];
+let exponente=[128,64,32,16,8,4,2,1];
 let binario=[0,0,0,0,0,0,0,0];
 let suma=0;
 for(i=0;i<8;i++){
     if((suma+exponente[i])<=num){
         suma=exponente[i]+suma;
+       
         binario[i]=1;
     }
+    
 }
 
 
